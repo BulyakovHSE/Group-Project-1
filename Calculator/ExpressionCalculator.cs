@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 
 namespace Calculator
 {
@@ -415,6 +416,135 @@ namespace Calculator
             for (int i = 0; i < len; i++)
                 NewR.Branchs[i] = R.Branchs[i];
             return NewR;
+        }
+
+        public static bool TryParseComplex(String expr, out Complex complex)
+        {
+            // Инициализация необходимых переменных, массивов
+            String Real = "", Imaginary = "";
+            Double RealI = 0, ImaginaryI = 0;
+            String[] PartsOfExpression = new String[0];
+            complex = new Complex();
+
+            // Замена I, j или J в выражении на i
+            if (expr.Contains("I") || expr.Contains("j") || expr.Contains("J"))
+            {
+                String NewExpr = "";
+                foreach (Char ch in expr)
+                {
+                    if (ch == 'I' || ch == 'j' || ch == 'J') NewExpr += 'i';
+                    else NewExpr += ch;
+                }
+                expr = NewExpr;
+            }
+
+            // Разделение выражения на составные части, для их последующего преобразования в вещественные числа
+            if (expr.Contains("+")) // Разделение выражения по символу '+' если он присутствует
+                PartsOfExpression = expr.Split('+');
+            else if (expr.Contains("-")) // Разделение выражения по символу '-' если он присутствует
+            {
+                PartsOfExpression = expr.Split('-');
+                if (PartsOfExpression.Length == 2) // Если разделенных частей 2, в выражении был 1 символ '-'
+                {
+                    if (PartsOfExpression[0] != "") // Если '-' стоял между двух чисел, возвращаем знак второму числу
+                        PartsOfExpression[1] = "-" + PartsOfExpression[1];
+                    else
+                    { // Если '-' стоял перед первым и единственным числом. Возвращаем ему знак минус, удаляем пустую часть
+                        String[] NewPartsOfExpression = new String[1];
+                        NewPartsOfExpression[0] = "-" + PartsOfExpression[1];
+                        PartsOfExpression = NewPartsOfExpression;
+                    }
+                }
+
+                else if (PartsOfExpression.Length == 3) // Если разделенных частей 3, в выражении было 2 символа '-'
+                { // Удаляем пустую часть и возвращаем знак минус числам
+                    String[] NewPartsOfExpression = new String[2];
+                    NewPartsOfExpression[0] = "-" + PartsOfExpression[1];
+                    NewPartsOfExpression[1] = "-" + PartsOfExpression[2];
+                    PartsOfExpression = NewPartsOfExpression;
+                }
+                // В выражении не должно быть более 2 символов '-'
+                else return false;
+            }
+
+            // Преобразование в комплексное число
+
+            if (PartsOfExpression.Length == 2)
+            { // Если в выражении есть и действительная и мнимая части
+                PartsOfExpression[0].Trim(); // Удаление лишних пробелов
+                PartsOfExpression[1].Trim();
+                if (PartsOfExpression[0].EndsWith("i") && !PartsOfExpression[1].EndsWith("i"))
+                { // Если первое число заканчивается на i, а второе нет
+                    foreach (Char ch in PartsOfExpression[0])
+                    { // Удаление i и запись первого числа в переменную Imaginary
+                        if (ch != 'i') Imaginary += ch;
+                    }
+                    // Запись второго числа в переменную Real
+                    Real = PartsOfExpression[1];
+                    if (Double.TryParse(Real, out RealI) && Double.TryParse(Imaginary, out ImaginaryI))
+                    { // Если числа действительно вещественные, преобразование их в комплексное число
+                        complex = new Complex(RealI, ImaginaryI);
+                        return true;
+                    }
+                }
+                else if (!PartsOfExpression[0].EndsWith("i") && PartsOfExpression[1].EndsWith("i"))
+                { // Аналогично предыдущему условию, только второе число заканчивается на i вместо первого
+                    foreach (Char ch in PartsOfExpression[1])
+                    {
+                        if (ch != 'i') Imaginary += ch;
+                    }
+                    Real = PartsOfExpression[0];
+                    if (Double.TryParse(Real, out RealI) && Double.TryParse(Imaginary, out ImaginaryI))
+                    {
+                        complex = new Complex(RealI, ImaginaryI);
+                        return true;
+                    }
+                }
+            }
+            else if (PartsOfExpression.Length == 1)
+            { // Если в выражении присутствует только действительная или мнимая часть
+                PartsOfExpression[0].Trim();
+                if (PartsOfExpression[0].EndsWith("i"))
+                { // Если это мнимая часть
+                    foreach (Char ch in PartsOfExpression[0])
+                    { // Удаление i и запись числа в переменную Imaginary 
+                        if (ch != 'i') Imaginary += ch;
+                    }
+                    if (Imaginary == "-") Imaginary = "-1"; // Если было введено -i
+                    if (Double.TryParse(Imaginary, out ImaginaryI))
+                    { // Если число вещественное, преобразование его в комплексное
+                        complex = new Complex(0, ImaginaryI);
+                        return true;
+                    }
+                }
+                else
+                { // Если это действительная часть
+                    Real = PartsOfExpression[0];
+                    if (Double.TryParse(Real, out RealI))
+                    { // Если число вещественное, преобразование его в комплексное
+                        complex = new Complex(RealI, 0);
+                        return true;
+                    }
+                }
+            }
+            else if (PartsOfExpression.Length == 0)
+            {
+                Expression.Trim();
+                if (Expression.EndsWith("i"))
+                { // Если это мнимая часть
+                    foreach (Char ch in Expression)
+                    { // Удаление i и запись числа в переменную Imaginary 
+                        if (ch != 'i') Imaginary += ch;
+                    }
+                    if (Imaginary == "") Imaginary = "1"; // Если было введено i
+                    if (Double.TryParse(Imaginary, out ImaginaryI))
+                    { // Если число вещественное, преобразование его в комплексное
+                        complex = new Complex(0, ImaginaryI);
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
     }
 }

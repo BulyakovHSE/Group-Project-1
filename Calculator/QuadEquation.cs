@@ -40,5 +40,19 @@ namespace Calculator
             B = b;
             C = c;
         }
+
+        public QuadEquation(string a, string b, string c)
+        {
+            Complex x1, x2, x3;
+            if (ExpressionCalculator.TryParseComplex(a, out x1) &&
+                ExpressionCalculator.TryParseComplex(b, out x2) &&
+                ExpressionCalculator.TryParseComplex(c, out x3))
+            {
+                A = x1;
+                B = x2;
+                C = x3;
+            }
+            else throw new System.Exception("Один из переданных параметров не является комплексным числом!");
+        }
     }
 }
