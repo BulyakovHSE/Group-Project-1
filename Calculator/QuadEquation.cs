@@ -22,7 +22,7 @@ namespace Calculator
         {
             get
             {
-                return (-B + Complex.Pow(D, 0.5)) / 2;
+                return (-B + Complex.Pow(D, 0.5)) / 2 * A;
             }
         }
 
@@ -30,7 +30,7 @@ namespace Calculator
         {
             get
             {
-                return (-B - Complex.Pow(D, 0.5)) / 2;
+                return (-B - Complex.Pow(D, 0.5)) / 2 * A;
             }
         }
 
