@@ -1,0 +1,9 @@
+C:\Users\Ваша Светлость\Source\Repos\Group-Project-1\Calculator\bin\Debug\Calculator.exe.config
+C:\Users\Ваша Светлость\Source\Repos\Group-Project-1\Calculator\bin\Debug\Calculator.exe
+C:\Users\Ваша Светлость\Source\Repos\Group-Project-1\Calculator\bin\Debug\Calculator.pdb
+C:\Users\Ваша Светлость\Source\Repos\Group-Project-1\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
+C:\Users\Ваша Светлость\Source\Repos\Group-Project-1\Calculator\obj\Debug\Calculator.MainForm.resources
+C:\Users\Ваша Светлость\Source\Repos\Group-Project-1\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+C:\Users\Ваша Светлость\Source\Repos\Group-Project-1\Calculator\obj\Debug\Calculator.csproj.GenerateResource.Cache
+C:\Users\Ваша Светлость\Source\Repos\Group-Project-1\Calculator\obj\Debug\Calculator.exe
+C:\Users\Ваша Светлость\Source\Repos\Group-Project-1\Calculator\obj\Debug\Calculator.pdb
