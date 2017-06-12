@@ -468,7 +468,7 @@ namespace Calculator
             }
 
             // Преобразование в комплексное число
-
+            
             if (PartsOfExpression.Length == 2)
             { // Если в выражении есть и действительная и мнимая части
                 PartsOfExpression[0].Trim(); // Удаление лишних пробелов
