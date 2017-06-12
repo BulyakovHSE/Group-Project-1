@@ -25,16 +25,16 @@ namespace Calculator
             {
                 qe = new QuadEquation(firstK.Text, secondK.Text, thirdK.Text);
                 Complex d = qe.D;
-                if (d.Imaginary==0) resultOfD.Text = "" + d.Real; else
-                resultOfD.Text = "" + d.Real + " + " + d.Imaginary + "i";
+                if (d.Imaginary==0) resultOfD.Text = "" + Math.Round(d.Real,2); else
+                resultOfD.Text = "" + Math.Round(d.Real,2) + " + " + Math.Round(d.Imaginary,2) + "i";
                 d = qe.X1;
-                if (d.Imaginary == 0) resultX1.Text = "" + d.Real;
+                if (d.Imaginary == 0) resultX1.Text = "" + Math.Round(d.Real,2);
                 else
-                    resultX1.Text = "" + d.Real + " + " + d.Imaginary + "i";
+                    resultX1.Text = "" + Math.Round(d.Real,2) + " + " + Math.Round(d.Imaginary,2) + "i";
                 d = qe.X2;
-                if (d.Imaginary == 0) resultX2.Text = "" + d.Real;
+                if (d.Imaginary == 0) resultX2.Text = "" + Math.Round(d.Real,2);
                 else
-                    resultX2.Text = "" + d.Real + " + " + d.Imaginary + "i";
+                    resultX2.Text = "" + Math.Round(d.Real,2) + " + " + Math.Round(d.Imaginary,2) + "i";
 
             }
             catch (Exception ept)
