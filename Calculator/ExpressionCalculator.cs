@@ -543,6 +543,14 @@ namespace Calculator
                         return true;
                     }
                 }
+                else
+                {
+                    if (Double.TryParse(expr, out RealI))
+                    {
+                        complex = new Complex(RealI, 0);
+                        return true;
+                    }
+                }
             }
             return false;
         }
