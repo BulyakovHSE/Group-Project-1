@@ -529,10 +529,10 @@ namespace Calculator
             }
             else if (PartsOfExpression.Length == 0)
             {
-                Expression.Trim();
-                if (Expression.EndsWith("i"))
+                expr.Trim();
+                if (expr.EndsWith("i"))
                 { // Если это мнимая часть
-                    foreach (Char ch in Expression)
+                    foreach (Char ch in expr)
                     { // Удаление i и запись числа в переменную Imaginary 
                         if (ch != 'i') Imaginary += ch;
                     }
