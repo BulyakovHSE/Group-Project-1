@@ -10,3 +10,7 @@ C:\Users\Ваша Светлость\Source\Repos\Group-Project-1\Calculator\obj
 E:\кал\Calculator\bin\Debug\Calculator.exe.config
 E:\кал\Calculator\obj\Debug\Calculator.exe
 E:\кал\Calculator\obj\Debug\Calculator.pdb
+E:\кал\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
+E:\кал\Calculator\obj\Debug\Calculator.Form1.resources
+E:\кал\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+E:\кал\Calculator\obj\Debug\Calculator.csproj.GenerateResource.Cache
