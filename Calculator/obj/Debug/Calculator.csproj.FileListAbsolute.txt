@@ -14,3 +14,12 @@ E:\кал\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
 E:\кал\Calculator\obj\Debug\Calculator.Form1.resources
 E:\кал\Calculator\obj\Debug\Calculator.Properties.Resources.resources
 E:\кал\Calculator\obj\Debug\Calculator.csproj.GenerateResource.Cache
+C:\Users\Bulya\Source\Repos\Group-Project-1\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
+C:\Users\Bulya\Source\Repos\Group-Project-1\Calculator\obj\Debug\Calculator.Form1.resources
+C:\Users\Bulya\Source\Repos\Group-Project-1\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+C:\Users\Bulya\Source\Repos\Group-Project-1\Calculator\obj\Debug\Calculator.csproj.GenerateResource.Cache
+C:\Users\Bulya\Source\Repos\Group-Project-1\Calculator\obj\Debug\Calculator.exe
+C:\Users\Bulya\Source\Repos\Group-Project-1\Calculator\obj\Debug\Calculator.pdb
+C:\Users\Bulya\Source\Repos\Group-Project-1\Calculator\bin\Debug\Calculator.exe.config
+C:\Users\Bulya\Source\Repos\Group-Project-1\Calculator\bin\Debug\Calculator.exe
+C:\Users\Bulya\Source\Repos\Group-Project-1\Calculator\bin\Debug\Calculator.pdb
