@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator.csproj", "{7283B82C-D4A0-448B-B133-63133EDCFF0F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringExpressionsLibrary", "..\StringExpressionsLibrary\StringExpressionsLibrary.csproj", "{6F7D8E99-2AAA-4588-B4E4-BFA0D04618CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7283B82C-D4A0-448B-B133-63133EDCFF0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7283B82C-D4A0-448B-B133-63133EDCFF0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7283B82C-D4A0-448B-B133-63133EDCFF0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F7D8E99-2AAA-4588-B4E4-BFA0D04618CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F7D8E99-2AAA-4588-B4E4-BFA0D04618CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F7D8E99-2AAA-4588-B4E4-BFA0D04618CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F7D8E99-2AAA-4588-B4E4-BFA0D04618CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,4 @@
+C:\Users\Bulya\Source\Repos\Group-Project-1\StringExpressionsLibrary\bin\Debug\StringExpressionsLibrary.dll
+C:\Users\Bulya\Source\Repos\Group-Project-1\StringExpressionsLibrary\bin\Debug\StringExpressionsLibrary.pdb
+C:\Users\Bulya\Source\Repos\Group-Project-1\StringExpressionsLibrary\obj\Debug\StringExpressionsLibrary.dll
+C:\Users\Bulya\Source\Repos\Group-Project-1\StringExpressionsLibrary\obj\Debug\StringExpressionsLibrary.pdb

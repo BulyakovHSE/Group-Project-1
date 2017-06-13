@@ -32,3 +32,5 @@ C:\Users\Никита\Source\Repos\Group-Project-1\Calculator\obj\Debug\Calculat
 C:\Users\Никита\Source\Repos\Group-Project-1\Calculator\obj\Debug\Calculator.Form1.resources
 C:\Users\Никита\Source\Repos\Group-Project-1\Calculator\obj\Debug\Calculator.Properties.Resources.resources
 C:\Users\Никита\Source\Repos\Group-Project-1\Calculator\obj\Debug\Calculator.csproj.GenerateResource.Cache
+C:\Users\Bulya\Source\Repos\Group-Project-1\Calculator\bin\Debug\StringExpressionsLibrary.dll
+C:\Users\Bulya\Source\Repos\Group-Project-1\Calculator\bin\Debug\StringExpressionsLibrary.pdb

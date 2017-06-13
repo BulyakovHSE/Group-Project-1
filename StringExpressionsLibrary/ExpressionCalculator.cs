@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Numerics;
 
-namespace Calculator
+namespace StringExpressionsLibrary
 {
-    class ExpressionCalculator
+    public class ExpressionCalculator
     {
         public partial class TreeNode
         {
@@ -326,29 +326,29 @@ namespace Calculator
                     {
                         WithError = true;
                         return 0;
-                        if (CH == 'e' || CH == 'E')
-                        {
-                            Vars[i] = Math.E;
-                            VarExist[i] = true;
-                        }
-                        else if (CH == 'p' || CH == 'P')
-                        {
-                            Vars[i] = Math.PI;
-                            VarExist[i] = true;
-                        }
-                        else
-                        {
-                            bool input;
-                            //Console.Write("Введите значение " + CH + ": ");
-                            do
-                            {
-                                input = Double.TryParse(Console.ReadLine(), out Vars[i]);
-                                if (!input) { }
-                                //Console.Write("Введите число!\nВведите значение " + CH + ": ");
-                            } while (!input);
-                            VarExist[i] = true;
-                        }
-                        return Vars[i];
+                        //if (CH == 'e' || CH == 'E')
+                        //{
+                        //    Vars[i] = Math.E;
+                        //    VarExist[i] = true;
+                        //}
+                        //else if (CH == 'p' || CH == 'P')
+                        //{
+                        //    Vars[i] = Math.PI;
+                        //    VarExist[i] = true;
+                        //}
+                        //else
+                        //{
+                        //    bool input;
+                        //    //Console.Write("Введите значение " + CH + ": ");
+                        //    do
+                        //    {
+                        //        input = Double.TryParse(Console.ReadLine(), out Vars[i]);
+                        //        if (!input) { }
+                        //        //Console.Write("Введите число!\nВведите значение " + CH + ": ");
+                        //    } while (!input);
+                        //    VarExist[i] = true;
+                        //}
+                        //return Vars[i];
                     }
                     else if (CH == Letters[i] && VarExist[i])
                         return Vars[i];
@@ -418,8 +418,22 @@ namespace Calculator
             return NewR;
         }
 
+        private static string ReplaceDots(string Expression)
+        { // Замена точек в выражении на запятые, т.к. Double.TryParse() принимает только их.
+            String str = "";
+            foreach (Char ch in Expression)
+            {
+                if (ch != '.') str += ch;
+                else str += ',';
+            }
+            Expression = str;
+            return Expression;
+        }
+
         public static bool TryParseComplex(String expr, out Complex complex)
         {
+            expr = ReplaceDots(expr);
+
             // Инициализация необходимых переменных, массивов
             String Real = "", Imaginary = "";
             Double RealI = 0, ImaginaryI = 0;
@@ -468,7 +482,7 @@ namespace Calculator
             }
 
             // Преобразование в комплексное число
-            
+
             if (PartsOfExpression.Length == 2)
             { // Если в выражении есть и действительная и мнимая части
                 PartsOfExpression[0].Trim(); // Удаление лишних пробелов

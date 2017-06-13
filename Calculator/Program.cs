@@ -18,10 +18,6 @@ namespace Calculator
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-            Complex c;
-            ExpressionCalculator.TryParseComplex("1", out c);
-            //MessageBox.Show(c.ToString());
-
         }
     }
 }

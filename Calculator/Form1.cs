@@ -37,7 +37,7 @@ namespace Calculator
                     resultX2.Text = "" + Math.Round(d.Real,2) + " + " + Math.Round(d.Imaginary,2) + "i";
 
             }
-            catch (Exception ept)
+            catch
             {
                 MessageBox.Show("Некорректные коэффициенты", "Error");
             }
@@ -71,6 +71,16 @@ namespace Calculator
         {
             dInX1.Text = resultOfD.Text;
             dInX2.Text = resultOfD.Text;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
