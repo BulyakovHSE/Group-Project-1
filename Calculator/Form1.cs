@@ -20,27 +20,7 @@ namespace Calculator
 
         private void result_Click(object sender, EventArgs e)
         {
-            QuadEquation qe;
-            try
-            {
-                qe = new QuadEquation(firstK.Text, secondK.Text, thirdK.Text);
-                Complex d = qe.D;
-                if (d.Imaginary==0) resultOfD.Text = "" + Math.Round(d.Real,2); else
-                resultOfD.Text = "" + Math.Round(d.Real,2) + " + " + Math.Round(d.Imaginary,2) + "i";
-                d = qe.X1;
-                if (d.Imaginary == 0) resultX1.Text = "" + Math.Round(d.Real,2);
-                else
-                    resultX1.Text = "" + Math.Round(d.Real,2) + " + " + Math.Round(d.Imaginary,2) + "i";
-                d = qe.X2;
-                if (d.Imaginary == 0) resultX2.Text = "" + Math.Round(d.Real,2);
-                else
-                    resultX2.Text = "" + Math.Round(d.Real,2) + " + " + Math.Round(d.Imaginary,2) + "i";
-
-            }
-            catch
-            {
-                MessageBox.Show("Некорректные коэффициенты", "Error");
-            }
+            Calculator.Calc(this);
         }
 
         private void firstK_TextChanged(object sender, EventArgs e)
